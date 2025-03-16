@@ -94,3 +94,18 @@ services:
       - controller-1
       - controller-2
       - controller-3
+
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - 8066:8080
+    depends_on:
+      - broker-1
+      - broker-2
+      - broker-3
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local 
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker-1:19092,broker-2:19092,broker-3:19092
+      KAFKA_CLUSTERS_0_PROPERTIES_SECURITYPROTOCOL: PLAINTEXT
+    restart: unless-stopped
