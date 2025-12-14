@@ -1,6 +1,6 @@
 services:
   controller-1:
-    image: apache/kafka:latest
+    image: apache/kafka:4.1.1
     container_name: controller-1
     environment:
       KAFKA_NODE_ID: 1
@@ -15,7 +15,7 @@ services:
         ipv4_address: 172.28.1.50 
 
   controller-2:
-    image: apache/kafka:latest
+    image: apache/kafka:4.1.1
     container_name: controller-2
     environment:
       KAFKA_NODE_ID: 2
@@ -30,7 +30,7 @@ services:
         ipv4_address: 172.28.1.51
 
   controller-3:
-    image: apache/kafka:latest
+    image: apache/kafka:4.1.1
     container_name: controller-3
     environment:
       KAFKA_NODE_ID: 3
@@ -45,7 +45,7 @@ services:
         ipv4_address: 172.28.1.52
 
   broker-1:
-    image: apache/kafka:latest
+    image: apache/kafka:4.1.1
     container_name: broker-1
     ports:
       - 29092:9092
@@ -68,7 +68,7 @@ services:
         ipv4_address: 172.28.1.53
 
   broker-2:
-    image: apache/kafka:latest
+    image: apache/kafka:4.1.1
     container_name: broker-2
     ports:
       - 39092:9092
@@ -91,7 +91,7 @@ services:
         ipv4_address: 172.28.1.54
 
   broker-3:
-    image: apache/kafka:latest
+    image: apache/kafka:4.1.1
     container_name: broker-3
     ports:
       - 49092:9092
@@ -115,7 +115,7 @@ services:
 
   kafka-ui:
     container_name: kafka-ui
-    image: provectuslabs/kafka-ui:latest
+    image: provectuslabs/kafka-ui:0.7.2
     ports:
       - 8066:8080
     depends_on:
